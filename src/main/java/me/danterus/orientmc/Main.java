@@ -1,4 +1,4 @@
-package org.example;
+package me.danterus.orientmc;
 
 import it.unimi.dsi.fastutil.Pair;
 import net.minestom.server.MinecraftServer;
@@ -947,10 +947,6 @@ public class Main {
         globalEventHandler.addListener(PlayerBlockBreakEvent.class, event -> {
             scroll.getAndDecrement();
         });
-
-        Command command = new Command("gen");
-        command.setDefaultExecutor(new CommandThing());
-        MinecraftServer.getCommandManager().register(command);
 
         minecraftServer.start("0.0.0.0", 25565);
     }

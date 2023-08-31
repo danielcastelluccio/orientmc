@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'org.example'
+group 'me.danterus'
 version '1.0-SNAPSHOT'
 
 
@@ -18,7 +18,7 @@ dependencies {
 
 jar {
     manifest {
-        attributes "Main-Class": "org.example.Main"
+        attributes "Main-Class": "me.danterus.orientmc.Main"
     }
 
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
