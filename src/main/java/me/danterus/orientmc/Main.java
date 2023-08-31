@@ -93,7 +93,7 @@ public class Main {
 
         MinecraftServer.getSchedulerManager().scheduleNextTick(() -> {
             try {
-                JSONObject object = new JSONObject(Files.readString(Path.of("Sodra-Styrso-big.json")));
+                JSONObject object = new JSONObject(Files.readString(Path.of("map.json")));
 
                 JSONArray features = object.getJSONArray("features");
 
