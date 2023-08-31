@@ -1003,11 +1003,13 @@ public class Main {
     }
 
     private static List<Pair<Double, Double>> getPolygonCoordinates(Object coordinatesBase) {
-        JSONArray coordinates = ((JSONArray) coordinatesBase).getJSONArray(0);
         List<Pair<Double, Double>> list = new ArrayList<>();
-        for (Object item : coordinates) {
-            JSONArray array = (JSONArray) item;
-            list.add(Pair.of(array.getDouble(0), array.getDouble(1)));
+        if (coordinatesBase instanceof JSONArray) {
+            JSONArray coordinates = ((JSONArray) coordinatesBase).getJSONArray(0);
+            for (Object item : coordinates) {
+                JSONArray array = (JSONArray) item;
+                list.add(Pair.of(array.getDouble(0), array.getDouble(1)));
+            }
         }
         return list;
     }
