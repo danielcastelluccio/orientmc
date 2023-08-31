@@ -1007,8 +1007,10 @@ public class Main {
         if (coordinatesBase instanceof JSONArray) {
             JSONArray coordinates = ((JSONArray) coordinatesBase).getJSONArray(0);
             for (Object item : coordinates) {
-                JSONArray array = (JSONArray) item;
-                list.add(Pair.of(array.getDouble(0), array.getDouble(1)));
+                if (item instanceof JSONArray) {
+                    JSONArray array = (JSONArray) item;
+                    list.add(Pair.of(array.getDouble(0), array.getDouble(1)));
+                }
             }
         }
         return list;
