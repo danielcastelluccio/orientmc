@@ -12,6 +12,17 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.Minestom:Minestom:8585e0ceb0'
+    implementation 'com.github.Minestom:Minestom:2b8beadd3e'
     implementation 'org.json:json:20220924'
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": "org.example.Main"
+    }
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }
